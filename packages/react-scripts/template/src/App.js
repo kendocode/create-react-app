@@ -7,7 +7,7 @@ class App extends Component {
 
   getEnvValues() {
     if (!process.env.REACT_APP_EMPLOYEE_NAME || !process.env.REACT_APP_POSITION) {
-      throw new Error('Please define `REACT_APP_EMPLOYEE` and `REACT_APP_POSITION` in your .env file');
+      throw new Error('Please define `REACT_APP_EMPLOYEE_NAME` and `REACT_APP_POSITION` in your .env file');
     }
 
     const employeeName = process.env.REACT_APP_EMPLOYEE_NAME
@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Unicode Labs</h2>
+          <h2>Welcome to Britebee Development</h2>
         </div>
         <p className="App-intro">
            <b> Employee Name: { employeeName } </b><br/><br/>
