@@ -1,25 +1,35 @@
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  getEnvValues() {
+    if (!process.env.REACT_APP_EMPLOYEE_NAME || !process.env.REACT_APP_POSITION) {
+      throw new Error('Please define `REACT_APP_EMPLOYEE` and `REACT_APP_POSITION` in your .env file');
+    }
+
+    const employeeName = process.env.REACT_APP_EMPLOYEE_NAME
+    const position = process.env.REACT_APP_POSITION;
+
+    return { employeeName, position };
+  }
+
   render() {
+
+    const { employeeName, position } = this.getEnvValues();
+
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <h2>Welcome to Unicode Labs</h2>
+        </div>
+        <p className="App-intro">
+           <b> Employee Name: { employeeName } </b><br/><br/>
+           <b> Position: { position } </b>
+        </p>
       </div>
     );
   }

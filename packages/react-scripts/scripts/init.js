@@ -212,6 +212,9 @@ module.exports = function(
 
   console.log();
   console.log(`Success! Created ${appName} at ${appPath}`);
+  // ---- custom console logs
+  console.log('Britebee custom Create-React-App Implementation');
+// -- end custom console logs
   console.log('Inside that directory, you can run several commands:');
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} start`));
